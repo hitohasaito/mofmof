@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  station1: MyString
+  line1: MyString
+  walking_minutes1: 1
+  station2: MyString
+  line2: MyString
+  walking_minutes2: 1
+
+two:
+  station1: MyString
+  line1: MyString
+  walking_minutes1: 1
+  station2: MyString
+  line2: MyString
+  walking_minutes2: 1
