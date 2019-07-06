@@ -1,0 +1,24 @@
+<h1>物件登録</h1>
+<%= form_for(@estate, local:true) do |f|%>
+  <div class="estates.info">
+    <%= f.label :name%><br>
+    <%= f.text_field :name%>
+  </div>
+  <div class="estates.info">
+    <%= f.label :fee%><br>
+    <%= f.text_field:fee%>
+  </div>
+  <div class="estates.info">
+    <%= f.label:adress%><br>
+    <%= f.text_field:adress%>
+  </div>
+  <div class="estates.info">
+    <%= f.label:age%><br>
+    <%= f.text_field:age%>
+  </div>
+  <div class="estates.info">
+    <%= f.label:note%><br>
+    <%= f.text_area:note%>
+  </div>
+<%= f.submit "登録する" %>
+<% end %>
