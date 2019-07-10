@@ -22,3 +22,31 @@
   </div>
 <%= f.submit "登録する" %>
 <% end %>
+<hr>
+<%= form_for(@station, url:stations_path,method: :post, local:true) do |f| %>
+  <div class = "estates.info">
+    <%= f.label :station1%><br>
+    <%= f.text_field :station1%>
+  </div>
+  <div class = "estates.info" >
+    <%= f.label :line1%><br>
+    <%= f.text_field:line1%>
+  </div>
+  <div class = "estates.info" >
+    <%= f.label :walking_minutes1%><br>
+    <%= f.text_field:walking_minutes1%>
+  </div>
+  <div class = "estates.info">
+    <%= f.label :station2%><br>
+    <%= f.text_field :station2%>
+  </div>
+  <div class = "estates.info" >
+    <%= f.label :line2%><br>
+    <%= f.text_field:line2%>
+  </div>
+  <div class = "estates.info" >
+    <%= f.label :walking_minutes2%><br>
+    <%= f.text_field:walking_minutes2%>
+  </div>
+<%= f.submit "登録する" %>
+<% end %>

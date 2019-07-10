@@ -3,5 +3,6 @@ class EstatesController < ApplicationController
   end
   def new
     @estate = Estate.new
+    @station = Station.new
   end
 end
