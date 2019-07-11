@@ -14,6 +14,9 @@ class EstatesController < ApplicationController
       render "new"
     end
   end
+  def index
+    @estates = Estate.all
+  end
 
 
   private
