@@ -1,5 +1,5 @@
 <h1>物件登録</h1>
-<%= form_for(@estate, local:true) do |f|%>
+<%= form_for(@estates,local:true) do |f|%>
   <div class="estates.info">
     <%= f.label :name%><br>
     <%= f.text_field :name%>
@@ -20,33 +20,32 @@
     <%= f.label:note%><br>
     <%= f.text_area:note%>
   </div>
-<%= f.submit "登録する" %>
-<% end %>
 <hr>
-<%= form_for(@station, url:stations_path,method: :post, local:true) do |f| %>
+<%= fields_for(@stations) do |s| %>
   <div class = "estates.info">
-    <%= f.label :station1%><br>
-    <%= f.text_field :station1%>
+    <%= s.label :station1%><br>
+    <%= s.text_field :station1%>
   </div>
   <div class = "estates.info" >
-    <%= f.label :line1%><br>
-    <%= f.text_field:line1%>
+    <%= s.label :line1%><br>
+    <%= s.text_field:line1%>
   </div>
   <div class = "estates.info" >
-    <%= f.label :walking_minutes1%><br>
-    <%= f.text_field:walking_minutes1%>
+    <%= s.label :walking_minutes1%><br>
+    <%= s.text_field:walking_minutes1%>
   </div>
   <div class = "estates.info">
-    <%= f.label :station2%><br>
-    <%= f.text_field :station2%>
+    <%= s.label :station2%><br>
+    <%= s.text_field :station2%>
   </div>
   <div class = "estates.info" >
-    <%= f.label :line2%><br>
-    <%= f.text_field:line2%>
+    <%= s.label :line2%><br>
+    <%= s.text_field:line2%>
   </div>
   <div class = "estates.info" >
-    <%= f.label :walking_minutes2%><br>
-    <%= f.text_field:walking_minutes2%>
+    <%= s.label :walking_minutes2%><br>
+    <%= s.text_field:walking_minutes2%>
   </div>
+<% end %>
 <%= f.submit "登録する" %>
 <% end %>
