@@ -5,14 +5,26 @@
   <th>住所</th>
   <th>築年数</th>
   <th>備考</th>
-
-<% @estates.each do |estate| %>
+  <th>駅</th>
+  <th>路線</th>
+  <th>徒歩分数</th>
+  <th>駅</th>
+  <th>路線</th>
+  <th>徒歩分数</th>
+<% @estate.each do |estate| %>
 <tr>
-  <td><%= estate.name %></td>
+  <td><%= estate.name%></td>
   <td><%= estate.fee %></td>
   <td><%= estate.adress %></td>
   <td><%= estate.age %></td>
   <td><%= estate.note %></td>
+  <td><%= estate.station.station1%></td>
+  <td><%= estate.station.line1 %></td>
+  <td><%= estate.station.walking_minutes1 %></td>
+  <td><%= estate.station.station2 %></td>
+  <td><%= estate.station.line2 %></td>
+  <td><%= estate.station.walking_minutes2 %></td>
+  <td><%= link_to "詳細画面へ",estate_path(estate.id) %>
 </tr>
 <% end %>
 </table>

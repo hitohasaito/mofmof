@@ -1,0 +1,15 @@
+<h1>閲覧</h1>
+<p>物件名:<%= @estates.name%></p>
+<p>賃料:<%= @estates.fee%></p>
+<p>住所:<%= @estates.adress%></p>
+<p>築年数:<%= @estates.age%></p>
+<p>備考:<%= @estates.note%></p>
+<hr>
+<h4>最寄り駅1</h4>
+<p>路線名:<%= @estates.station.line1 %></p>
+<p>駅名:<%= @estates.station.station1%></p>
+<p>徒歩分数:<%= @estates.station.walking_minutes1%></p>
+<h4>最寄り駅2</h4>
+<p>路線名:<%= @estates.station.line2%></p>
+<p>駅名:<%= @estates.station.station2%></p>
+<p>徒歩分数:<%= @estates.station.walking_minutes2%></p>
