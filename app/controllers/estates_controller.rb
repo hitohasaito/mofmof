@@ -1,5 +1,5 @@
 class EstatesController < ApplicationController
-before_action :set_estate_params,only:[:show]
+before_action :set_estate_params,only:[:show,:edit,:update]
   def index
   end
   def new
@@ -8,16 +8,25 @@ before_action :set_estate_params,only:[:show]
   end
   def create
     if Estate.create(estate_params)
-      redirect_to estates_path, notice:'登録できました'
+      redirect_to estates_path
     else
       render "new"
     end
   end
   def index
-  @estate = Estate.all
+  @estates = Estate.all
   end
   def show
-
+  end
+  def edit
+  end
+  def update
+    if @estate.update(estate_params)
+      flash[:notice] = "編集しました!"
+      redirect_to estates_path
+    else
+      render "edit"
+    end
   end
 
 
@@ -27,7 +36,7 @@ before_action :set_estate_params,only:[:show]
     params.require(:estate).permit(:name,:fee,:adress,:age,:note,station_attributes:[:station1,:line1,:walking_minutes1,:station2,:line2,:walking_minutes2])
   end
   def set_estate_params
-      @estates = Estate.find(params[:id])
+      @estate = Estate.find(params[:id])
   end
   #def set_station_params
     #@stations = Estate.find(params[:id])

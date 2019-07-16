@@ -1,4 +1,8 @@
 <h1>物件一覧</h1>
+
+<% if flash[:notice] %>
+  <p><%= flash[:notice] %></p>
+<% end %>
 <table>
   <th>物件名</th>
   <th>賃料</th>
@@ -11,7 +15,7 @@
   <th>駅</th>
   <th>路線</th>
   <th>徒歩分数</th>
-<% @estate.each do |estate| %>
+<% @estates.each do |estate| %>
 <tr>
   <td><%= estate.name%></td>
   <td><%= estate.fee %></td>
@@ -25,6 +29,8 @@
   <td><%= estate.station.line2 %></td>
   <td><%= estate.station.walking_minutes2 %></td>
   <td><%= link_to "詳細画面へ",estate_path(estate.id) %>
+  <td><%= link_to "編集画面へ",edit_estate_path(estate.id) %>
 </tr>
 <% end %>
 </table>
+<td><%= link_to "物件を登録する",new_estate_path%>
