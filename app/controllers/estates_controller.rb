@@ -7,7 +7,8 @@ before_action :set_estate_params,only:[:show,:edit,:update]
     @estate.build_station
   end
   def create
-    if Estate.create(estate_params)
+    @estate = Estate.new(estate_params)
+    if @estate.save
       redirect_to estates_path
     else
       render "new"
