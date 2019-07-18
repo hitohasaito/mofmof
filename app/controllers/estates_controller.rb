@@ -1,7 +1,6 @@
 class EstatesController < ApplicationController
-before_action :set_estate_params,only:[:show,:edit,:update]
-  def index
-  end
+before_action :set_estate_params,only:[:show,:edit,:update,:destroy]
+
   def new
     @estate = Estate.new
     @estate.build_station
@@ -29,6 +28,10 @@ before_action :set_estate_params,only:[:show,:edit,:update]
       render "edit"
     end
   end
+  def destroy
+    @estate.destroy
+    redirect_to estates_path, notice:"物件情報を削除しました"
+  end
 
 
   private
@@ -39,7 +42,4 @@ before_action :set_estate_params,only:[:show,:edit,:update]
   def set_estate_params
       @estate = Estate.find(params[:id])
   end
-  #def set_station_params
-    #@stations = Estate.find(params[:id])
-  #end
 end

@@ -14,7 +14,7 @@
   </div>
   <div class="estates.info">
     <%= f.label :fee%><br>
-    <%= f.text_field:fee%>
+    <%= f.text_field:fee %>円
   </div>
   <div class="estates.info">
     <%= f.label:adress%><br>
@@ -29,6 +29,7 @@
     <%= f.text_area:note%>
   </div>
 <hr>
+<h2>最寄り駅1</h2>
 <%= f.fields_for :station do |f|%>
   <div class = "estates.info">
     <%= f.label :station1%><br>
@@ -40,8 +41,9 @@
   </div>
   <div class = "estates.info" >
     <%= f.label :walking_minutes1%><br>
-    <%= f.text_field:walking_minutes1%>
+    <%= f.text_field:walking_minutes1%>分
   </div>
+<h2>最寄り駅2</h2>
   <div class = "estates.info">
     <%= f.label :station2%><br>
     <%= f.text_field :station2%>

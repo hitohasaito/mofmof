@@ -18,18 +18,19 @@
 <% @estates.each do |estate| %>
 <tr>
   <td><%= estate.name%></td>
-  <td><%= estate.fee %></td>
+  <td><%= estate.fee %>円</td>
   <td><%= estate.adress %></td>
-  <td><%= estate.age %></td>
+  <td><%= estate.age %>年</td>
   <td><%= estate.note %></td>
   <td><%= estate.station.station1%></td>
   <td><%= estate.station.line1 %></td>
-  <td><%= estate.station.walking_minutes1 %></td>
+  <td><%= estate.station.walking_minutes1 %>分</td>
   <td><%= estate.station.station2 %></td>
   <td><%= estate.station.line2 %></td>
-  <td><%= estate.station.walking_minutes2 %></td>
-  <td><%= link_to "詳細画面へ",estate_path(estate.id) %>
-  <td><%= link_to "編集画面へ",edit_estate_path(estate.id) %>
+  <td><%= estate.station.walking_minutes2 %>分</td>
+  <td><%= link_to "詳細画面へ",estate_path(estate.id) %></td>
+  <td><%= link_to "編集画面へ",edit_estate_path(estate.id) %></td>
+  <td><%= link_to "削除",estate_path(estate.id), method: :delete, data: {confirm: "本当に削除しますか？" } %></td>
 </tr>
 <% end %>
 </table>

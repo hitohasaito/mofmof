@@ -7,7 +7,7 @@ ja:
       estate:
         name: 物件名
         fee: 賃料
-        adress: 賃料
+        adress: 住所
         age: 築年数
         note: 備考
       station:
