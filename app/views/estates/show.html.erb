@@ -1,17 +1,16 @@
-<h1>閲覧</h1>
 <p>物件名:<%= @estate.name%></p>
-<p>賃料:<%= @estate.fee%></p>
+<p>賃料:<%= @estate.fee%>円</p>
 <p>住所:<%= @estate.adress%></p>
-<p>築年数:<%= @estate.age%></p>
+<p>築年数:<%= @estate.age%>年</p>
 <p>備考:<%= @estate.note%></p>
 <hr>
 <h2>最寄り駅1</h2>
 <p>路線名:<%= @estate.station.line1 %></p>
 <p>駅名:<%= @estate.station.station1%></p>
-<p>徒歩分数:<%= @estate.station.walking_minutes1%></p>
+<p>徒歩分数:<%= @estate.station.walking_minutes1%>分</p>
 <h2>最寄り駅2</h2>
 <p>路線名:<%= @estate.station.line2%></p>
 <p>駅名:<%= @estate.station.station2%></p>
-<p>徒歩分数:<%= @estate.station.walking_minutes2%></p>
-<%= link_to "編集",edit_estate_path(@estate.id) %>
+<p>徒歩分数:<%= @estate.station.walking_minutes2%>分</p>
+<%= link_to "編集",edit_estate_path(@estate.id) %>|
 <%= link_to "戻る",estates_path %>
