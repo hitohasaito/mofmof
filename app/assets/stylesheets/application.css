@@ -13,3 +13,17 @@
  *= require_tree .
  *= require_self
  */
+
+ .ja-text{
+   writing-mode: vertical-rl;
+     white-space: nowrap;
+     text-orientation: upright;
+     line-height: 0%;
+
+ }
+ .ja-text a{
+   text-decoration-line: none;
+ }
+.estate-show{
+  text-indent: 1em;
+}

@@ -9,28 +9,22 @@
   <th>住所</th>
   <th>築年数</th>
   <th>備考</th>
-  <th>駅</th>
-  <th>路線</th>
-  <th>徒歩分数</th>
-  <th>駅</th>
-  <th>路線</th>
-  <th>徒歩分数</th>
 <% @estates.each do |estate| %>
 <tr>
   <td><%= estate.name%></td>
-  <td><%= estate.fee %>円</td>
+  <td><%= converting_to_jpy(estate.fee)%></td>
   <td><%= estate.adress %></td>
   <td><%= estate.age %>年</td>
   <td><%= estate.note %></td>
-  <td><%= estate.station.station1%></td>
-  <td><%= estate.station.line1 %></td>
-  <td><%= estate.station.walking_minutes1 %>分</td>
-  <td><%= estate.station.station2 %></td>
-  <td><%= estate.station.line2 %></td>
-  <td><%= estate.station.walking_minutes2 %>分</td>
-  <td><%= link_to "詳細画面へ",estate_path(estate.id) %></td>
-  <td><%= link_to "編集画面へ",edit_estate_path(estate.id) %></td>
-  <td><%= link_to "削除",estate_path(estate.id), method: :delete, data: {confirm: "本当に削除しますか？" } %></td>
+  <td>
+    <p class = "ja-text"><%= link_to "詳細",estate_path(estate.id) %></p>
+  </td>
+  <td>
+    <p class = "ja-text"><%= link_to "編集",edit_estate_path(estate.id) %></p>
+  </td>
+  <td>
+    <p class = "ja-text"><%= link_to "削除",estate_path(estate.id), method: :delete, data: {confirm: "本当に削除しますか？" } %></p>
+  </td>
 </tr>
 <% end %>
 </table>
