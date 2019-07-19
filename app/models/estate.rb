@@ -4,6 +4,7 @@ class Estate < ApplicationRecord
   validates :adress, presence:true
   validates :age, presence:true
   validates :note, presence:true
+  
   has_one :station, dependent: :destroy
   accepts_nested_attributes_for :station
 end
