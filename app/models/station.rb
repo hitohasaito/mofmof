@@ -5,6 +5,6 @@ class Station < ApplicationRecord
   validates :station2, presence:true
   validates :line2, presence:true
   validates :walking_minutes2, presence:true,numericality: true
-  
-  belongs_to :estate,optional: true
+
+  belongs_to :estate, optional: true
 end

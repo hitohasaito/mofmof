@@ -8,15 +8,15 @@
 <hr>
 <h2>最寄り駅1</h2>
 <div class = "estate-show">
-  <p>路線名:<%= @estate.station.line1 %></p>
-  <p>駅名:<%= @estate.station.station1%></p>
-  <p>徒歩分数:<%= @estate.station.walking_minutes1%>分</p>
+  <p>路線名:<%= @estate.stations.first.line1 %></p>
+  <p>駅名:<%= @estate.stations.first.station1%></p>
+  <p>徒歩分数:<%= @estate.stations.first.walking_minutes1%>分</p>
 </div>
 <h2>最寄り駅2</h2>
 <div class = "estate-show">
-  <p>路線名:<%= @estate.station.line2%></p>
-  <p>駅名:<%= @estate.station.station2%></p>
-  <p>徒歩分数:<%= @estate.station.walking_minutes2%>分</p>
+  <p>路線名:<%= @estate.stations.first.line2%></p>
+  <p>駅名:<%= @estate.stations.first.station2%></p>
+  <p>徒歩分数:<%= @estate.stations.first.walking_minutes2%>分</p>
 </div>
 <%= link_to "編集",edit_estate_path(@estate.id) %>|
 <%= link_to "戻る",estates_path %>
