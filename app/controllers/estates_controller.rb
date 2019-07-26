@@ -3,7 +3,7 @@ before_action :set_estate_params,only:[:show,:edit,:update,:destroy]
 
   def new
     @estate = Estate.new
-    @estate.stations.build
+    2.times{@estate.stations.build}
   end
   def create
     @estate = Estate.new(estate_params)

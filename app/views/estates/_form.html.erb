@@ -29,33 +29,22 @@
     <%= f.text_area:note%>
   </div>
 <hr>
-<h2>最寄り駅1</h2>
-<%= f.fields_for :stations do |f|%>
+<% @estate.stations.each_with_index do |station,index| %>
+<h2>最寄り駅<%= index + 1 %></h2>
+<%= f.fields_for :stations, station do |s|%>
   <div class = "estates-info">
-    <%= f.label :station1%><br>
-    <%= f.text_field :station1%>
+    <%= s.label :station1%><br>
+    <%= s.text_field :station1%>
   </div>
   <div class = "estates-info" >
-    <%= f.label :line1%><br>
-    <%= f.text_field:line1%>
+    <%= s.label :line1%><br>
+    <%= s.text_field:line1%>
   </div>
   <div class = "estates-info" >
-    <%= f.label :walking_minutes1%><br>
-    <%= f.text_field:walking_minutes1%>分
+    <%= s.label :walking_minutes1%><br>
+    <%= s.text_field:walking_minutes1%>分
   </div>
-<h2>最寄り駅2</h2>
-  <div class = "estates-info">
-    <%= f.label :station2%><br>
-    <%= f.text_field :station2%>
-  </div>
-  <div class = "estates-info" >
-    <%= f.label :line2%><br>
-    <%= f.text_field:line2%>
-  </div>
-  <div class = "estates-info" >
-    <%= f.label :walking_minutes2%><br>
-    <%= f.text_field:walking_minutes2%>分
-  </div>
+<% end %>
 <% end %>
 <%= f.submit %>
 <% end %>
