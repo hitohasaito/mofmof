@@ -30,8 +30,8 @@
   </div>
 <hr>
 <% @estate.stations.each_with_index do |station,index| %>
-<h2>最寄り駅<%= index + 1 %></h2>
-<%= f.fields_for :stations, station do |s|%>
+  <h2>最寄り駅<%= index + 1 %></h2>
+  <%= f.fields_for :stations, station do |s|%>
   <div class = "estates-info">
     <%= s.label :station1%><br>
     <%= s.text_field :station1%>
@@ -44,7 +44,7 @@
     <%= s.label :walking_minutes1%><br>
     <%= s.text_field:walking_minutes1%>分
   </div>
-<% end %>
+  <% end %>
 <% end %>
 <%= f.submit %>
 <% end %>
