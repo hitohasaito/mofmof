@@ -19,6 +19,7 @@ before_action :set_estate_params,only:[:show,:edit,:update,:destroy]
   def show
   end
   def edit
+    @estate.stations.build
   end
   def update
     if @estate.update(update_params)
@@ -37,11 +38,10 @@ before_action :set_estate_params,only:[:show,:edit,:update,:destroy]
   private
 
   def estate_params
-    params.require(:estate).permit(:name,:fee,:adress,:age,:note,stations_attributes:[:station1,:line1,:walking_minutes1,:station2,:line2,:walking_minutes2,:_destroy])
+    params.require(:estate).permit(:name,:fee,:adress,:age,:note,stations_attributes:[:station1,:line1,:walking_minutes1,:_destroy])
   end
   def update_params
-    params.require(:estate).permit(:name,:fee,:adress,:age,:note,stations_attributes:[:station1,:line1,:walking_minutes1,:station2,:line2,:walking_minutes2,
-      :_destroy,:id])
+    params.require(:estate).permit(:name,:fee,:adress,:age,:note,stations_attributes:[:station1,:line1,:walking_minutes1,:_destroy,:id])
   end
   def set_estate_params
       @estate = Estate.find(params[:id])
