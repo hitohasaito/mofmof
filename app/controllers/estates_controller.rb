@@ -3,7 +3,7 @@ before_action :set_estate_params,only:[:show,:edit,:update,:destroy]
 
   def new
     @estate = Estate.new
-    @estate.build_station
+    2.times{@estate.stations.build}
   end
   def create
     @estate = Estate.new(estate_params)
@@ -19,9 +19,10 @@ before_action :set_estate_params,only:[:show,:edit,:update,:destroy]
   def show
   end
   def edit
+    @estate.stations.build
   end
   def update
-    if @estate.update(estate_params)
+    if @estate.update(update_params)
       flash[:notice] = "編集しました!"
       redirect_to estates_path
     else
@@ -37,7 +38,10 @@ before_action :set_estate_params,only:[:show,:edit,:update,:destroy]
   private
 
   def estate_params
-    params.require(:estate).permit(:name,:fee,:adress,:age,:note,station_attributes:[:station1,:line1,:walking_minutes1,:station2,:line2,:walking_minutes2])
+    params.require(:estate).permit(:name,:fee,:adress,:age,:note,stations_attributes:[:station1,:line1,:walking_minutes1,:_destroy])
+  end
+  def update_params
+    params.require(:estate).permit(:name,:fee,:adress,:age,:note,stations_attributes:[:station1,:line1,:walking_minutes1,:_destroy,:id])
   end
   def set_estate_params
       @estate = Estate.find(params[:id])

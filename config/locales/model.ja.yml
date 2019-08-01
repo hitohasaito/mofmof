@@ -17,3 +17,10 @@ ja:
         station2: 駅名
         line2: 路線名
         walking_minutes2: 徒歩分数
+      estate/stations:
+          station1: 駅名
+          line1: 路線名
+          walking_minutes1: 徒歩分数
+          station2: 駅名
+          line2: 路線名
+          walking_minutes2: 徒歩分数
